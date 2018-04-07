@@ -5,16 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh './gradlew clean build'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                sh 'java -jar build/libs/bookstore-0.1.0.jar'
             }
         }
     }

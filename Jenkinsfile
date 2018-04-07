@@ -11,7 +11,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'java -jar build/libs/bookstore-0.1.0.jar'
+                sh 'nohup java -jar build/libs/bookstore-0.1.0.jar'
             }
         }
     }
